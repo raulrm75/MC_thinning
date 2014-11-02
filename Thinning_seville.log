@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.11.20)  9 MAR 2014 16:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.4)  2 NOV 2014 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Thinning_seville.tex
 (./Thinning_seville.tex
 LaTeX2e <2011/06/27>
-Babel <3.9f> and hyphenation patterns for 5 languages loaded.
+Babel <3.9h> and hyphenation patterns for 7 languages loaded.
 (/home/raul/texmf/tex/latex/IEEEtran/IEEEtran.cls
 Document Class: IEEEtran 2012/12/27 V1.8 by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -272,7 +272,7 @@ Package color Info: Driver file: pdftex.def on input line 130.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 \c@ruleIdx=\count115
 \c@theorem=\count116
@@ -353,146 +353,160 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 119.
+LaTeX Font Info:    Try loading font information for U+msa on input line 104.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 119.
+LaTeX Font Info:    Try loading font information for U+msb on input line 104.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 156.
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 177.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) [2]
+Underfull \hbox (badness 7907) in paragraph at lines 342--351
+[]$\OMS/cmsy/m/n/10 R$ \OT1/ptm/m/n/10 is a fi-nite set of rules of the fol-low
+-ing
+ []
 
 
-] [2] [3]
-<EjemploColapso0.pdf, id=27, 597.23125pt x 793.96625pt>
+Underfull \hbox (badness 1762) in paragraph at lines 342--351
+\OT1/ptm/m/n/10 form: $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 pro \OMS/cmsy/m/n/10 :
+\OML/cmm/m/it/10 inh \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 i; u=v; j\OT1/cmr/m/n/
+10 )$ \OT1/ptm/m/n/10 for $\OT1/cmr/m/n/10 0 \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it
+/10 i \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 j \OMS/cmsy/m/n/10 ^
+^T
+ []
+
+[3] <EjemploColapso0.pdf, id=28, 597.23125pt x 793.96625pt>
 File: EjemploColapso0.pdf Graphic file (type pdf)
 
 <use EjemploColapso0.pdf>
-Package pdftex.def Info: EjemploColapso0.pdf used on input line 526.
+Package pdftex.def Info: EjemploColapso0.pdf used on input line 506.
 (pdftex.def)             Requested size: 93.61726pt x 82.64719pt.
 
-<EjemploColapso1.pdf, id=29, 597.23125pt x 793.96625pt>
+<EjemploColapso1.pdf, id=30, 597.23125pt x 793.96625pt>
 File: EjemploColapso1.pdf Graphic file (type pdf)
 
 <use EjemploColapso1.pdf>
-Package pdftex.def Info: EjemploColapso1.pdf used on input line 527.
+Package pdftex.def Info: EjemploColapso1.pdf used on input line 507.
 (pdftex.def)             Requested size: 93.61726pt x 82.64719pt.
  [4 <./EjemploColapso0.pdf> <./EjemploColapso1.pdf>]
-[5] [6]
-Overfull \hbox (18.48398pt too wide) in paragraph at lines 905--908
+[5] [6] [7] <Example-01.pdf, id=55, 597.23125pt x 793.96625pt>
+File: Example-01.pdf Graphic file (type pdf)
+
+<use Example-01.pdf>
+Package pdftex.def Info: Example-01.pdf used on input line 1022.
+(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
+ <Example-02.pdf, id=57, 597.23125pt x 793.96625pt>
+File: Example-02.pdf Graphic file (type pdf)
+
+<use Example-02.pdf>
+Package pdftex.def Info: Example-02.pdf used on input line 1023.
+(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
+ <Example-04.pdf, id=59, 597.23125pt x 793.96625pt>
+File: Example-04.pdf Graphic file (type pdf)
+
+<use Example-04.pdf>
+Package pdftex.def Info: Example-04.pdf used on input line 1024.
+(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
+ <Example-06.pdf, id=61, 597.23125pt x 793.96625pt>
+File: Example-06.pdf Graphic file (type pdf)
+
+<use Example-06.pdf>
+Package pdftex.def Info: Example-06.pdf used on input line 1025.
+(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
+ <Example-07.pdf, id=63, 597.23125pt x 793.96625pt>
+File: Example-07.pdf Graphic file (type pdf)
+
+<use Example-07.pdf>
+Package pdftex.def Info: Example-07.pdf used on input line 1026.
+(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
+ <Example-08.pdf, id=65, 597.23125pt x 793.96625pt>
+File: Example-08.pdf Graphic file (type pdf)
+
+<use Example-08.pdf>
+Package pdftex.def Info: Example-08.pdf used on input line 1027.
+(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
+ <Example-09.pdf, id=67, 597.23125pt x 793.96625pt>
+File: Example-09.pdf Graphic file (type pdf)
+
+<use Example-09.pdf>
+Package pdftex.def Info: Example-09.pdf used on input line 1028.
+(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
+ <Example-10.pdf, id=69, 597.23125pt x 793.96625pt>
+File: Example-10.pdf Graphic file (type pdf)
+
+<use Example-10.pdf>
+Package pdftex.def Info: Example-10.pdf used on input line 1029.
+(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
+File: Example-09.pdf Graphic file (type pdf)
+ <use Example-09.pdf>
+Package pdftex.def Info: Example-09.pdf used on input line 1030.
+(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1031
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1031
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1031
+[] []
+ []
+
+[8] (./Thinning_seville.bbl [9 <./Example-01.pdf> <./Example-02.pdf> <./Example
+-04.pdf> <./Example-06.pdf> <./Example-07.pdf> <./Example-08.pdf> <./Example-09
+.pdf> <./Example-10.pdf>]
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `{English}'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `{English}'. Using the pattern for
+** the default language instead.
+)
+Overfull \hbox (18.48398pt too wide) in paragraph at lines 1141--1144
 []$\OML/cmm/m/it/10 R[] \OMS/cmsy/m/n/10 ^^Q [] [] 
  []
 
 
-Overfull \hbox (46.20966pt too wide) in paragraph at lines 912--919
+Overfull \hbox (46.20966pt too wide) in paragraph at lines 1148--1155
 []$\OML/cmm/m/it/10 R[] \OMS/cmsy/m/n/10 ^^Q [] [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
-[8] <Example-01.pdf, id=57, 597.23125pt x 793.96625pt>
-File: Example-01.pdf Graphic file (type pdf)
- <use Example-01.pdf>
-Package pdftex.def Info: Example-01.pdf used on input line 1210.
-(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
-
-<Example-02.pdf, id=59, 597.23125pt x 793.96625pt>
-File: Example-02.pdf Graphic file (type pdf)
- <use Example-02.pdf>
-Package pdftex.def Info: Example-02.pdf used on input line 1211.
-(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
-
-<Example-04.pdf, id=61, 597.23125pt x 793.96625pt>
-File: Example-04.pdf Graphic file (type pdf)
- <use Example-04.pdf>
-Package pdftex.def Info: Example-04.pdf used on input line 1212.
-(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
-
-<Example-06.pdf, id=63, 597.23125pt x 793.96625pt>
-File: Example-06.pdf Graphic file (type pdf)
- <use Example-06.pdf>
-Package pdftex.def Info: Example-06.pdf used on input line 1213.
-(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
-
-<Example-07.pdf, id=65, 597.23125pt x 793.96625pt>
-File: Example-07.pdf Graphic file (type pdf)
- <use Example-07.pdf>
-Package pdftex.def Info: Example-07.pdf used on input line 1214.
-(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
-
-<Example-08.pdf, id=67, 597.23125pt x 793.96625pt>
-File: Example-08.pdf Graphic file (type pdf)
- <use Example-08.pdf>
-Package pdftex.def Info: Example-08.pdf used on input line 1215.
-(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
-
-<Example-09.pdf, id=69, 597.23125pt x 793.96625pt>
-File: Example-09.pdf Graphic file (type pdf)
- <use Example-09.pdf>
-Package pdftex.def Info: Example-09.pdf used on input line 1216.
-(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
-
-<Example-10.pdf, id=71, 597.23125pt x 793.96625pt>
-File: Example-10.pdf Graphic file (type pdf)
- <use Example-10.pdf>
-Package pdftex.def Info: Example-10.pdf used on input line 1217.
-(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
-File: Example-09.pdf Graphic file (type pdf)
-
-<use Example-09.pdf>
-Package pdftex.def Info: Example-09.pdf used on input line 1218.
-(pdftex.def)             Requested size: 113.53415pt x 82.64717pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1210--1219
-[][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1210--1219
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1210--1219
-[] []
- []
-
-[9] (./Thinning_seville.bbl [10 <./Example-01.pdf> <./Example-02.pdf> <./Exampl
-e-04.pdf> <./Example-06.pdf> <./Example-07.pdf> <./Example-08.pdf> <./Example-0
-9.pdf> <./Example-10.pdf>]
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `{English}'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `{English}'. Using the pattern for
-** the default language instead.
-) [11
+ [10]
+[11
 
 ] (./Thinning_seville.aux) ) 
 Here is how much of TeX's memory you used:
- 4002 strings out of 494969
- 57340 string characters out of 6179592
- 128924 words of memory out of 5000000
- 7115 multiletter control sequences out of 15000+600000
- 47606 words of font info for 97 fonts, out of 8000000 for 9000
- 40 hyphenation exceptions out of 8191
- 38i,17n,26p,438b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 4012 strings out of 494925
+ 57433 string characters out of 6178545
+ 129331 words of memory out of 5000000
+ 7130 multiletter control sequences out of 15000+600000
+ 50287 words of font info for 104 fonts, out of 8000000 for 9000
+ 62 hyphenation exceptions out of 8191
+ 38i,17n,26p,486b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base
 /8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr
@@ -503,25 +517,26 @@ f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msbm5.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
-rw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Thinning_seville.pdf (11 pages, 457899 bytes).
+sfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/symbols/msbm5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cour
+ier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Thinning_seville.pdf (11 pages, 465112 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
+ 192 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

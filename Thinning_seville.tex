@@ -73,27 +73,48 @@
 
 
 \begin{abstract}
-In \cite{liu20093d,DBLP:journals/cgf/LiuCLJ10}, a new algorithm for thinning multi-dimensional
+In this paper, three different research areas are brought together
+in order to propose a new point of view on a classical problem: Digital Image Analysis, Algebraic Topology and Membrane Computing.
+The chosen problem is the thinning of multi-dimensional black and white digital images.
+Thinning is usually considered as a preprocess in Digital Image Analysis, but it has important applications in the study of fingerprints, vessels and arteries or cartography. It does not consists on a mere removal of outer pixels, since the thinning process must preserve, in some sense, the {\it meaning} of the image. This means that the most important features
+concerning a shape are its \emph{topology} (represented by connected
+components, holes, etc.) and its \emph{geometry} (elongated parts,
+ramifications, etc.), thus they must be preserved. 
+
+Recently, a new algorithm for thinning multi-dimensional
 black and white digital images by using cell complexes was
 presented. Such cell complexes allow a discrete partition of the
 space and the algorithm preserves topological and geometrical
-properties of the complex. In this paper, we present a parallel
-implementation of such algorithm working with cubical complexes via tissue P systems with
-promoters, inhibitors and priorities, bridging together Membrane
-Computing, Image Analysis and Algebraic Topology.
+properties of the complex. Algebraic Topology allows us to split the space in discrete
+units and to define mechanical operators on such space units of
+different dimensions.
+
+As a third research area, a recent bio-inspired computational
+model, Membrane Computing, is used to handle with such operators and
+provide an alternative point of view for handling with them. Algebraic Topology and Membrane Computing deal with compartments of the Euclidean space on their
+foundations, but their inspiration and motivation are quite
+different. Membrane Computing techniques are inspired in the flow of metabolites between cells of
+a living tissue or between the organelles in an eucaryotic cell.
+This flow of metabolites takes place in parallel in Nature and can
+be interpreted as a flow of information for computational purposes.
+Instead of a set of few instructions with complex data structures,
+the computation steps in a Membrane Computing device are regulated
+by a set of rules with a notation close to biochemical reactions.
+From a computational point of view, such reactions can be read as a
+set of {\it if $A$ then $B$} rules where $A$ and $B$ are very simple
+data.
+
+In this paper, we present a parallel bio-inspired Membrane Computing implementation of an algorithm working with cubical complexes which solves the problem of thinning digital images.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Digital Image Analysis, Thinning Algorithm, Membrane Computing
+Digital Image Analysis, Thinning Algorithm, Membrane Computing, Algebraic Topology
 \end{IEEEkeywords}
 
 \section{Introduction}
 Computer vision \cite{ShapiroS01} is a vivid research area that
 tries to acquire, process, analyze and understand images from the
-real world in order to produce useful information. In biology,
-vision is a complex process involving the transformation of the
-light energy into a signal which leaves the eye by way of the optic
-nerve and arrives to the brain, where is interpreted. From the
+real world in order to produce useful information. From the
 computational side, a 2D digital image can be roughly defined as a
 function from a two dimensional surface which maps each point from
 the surface onto a set of attributes as bright or color.
@@ -103,7 +124,7 @@ great variety of useful {\it information} in computer vision areas
 as biometrics, surveillance or medical imaging, among others.
 
 In this paper, we focus on the problem of obtaining the so-called
-{\it skeleton} of a black and white image.Skeletonization is one of
+{\it skeleton} of a black and white image. Skeletonization is one of
 the approaches for representing a shape with a small amount of
 information, by converting the initial image into a more compact
 representation and keeping the meaning features. The conversion
@@ -134,18 +155,18 @@ images based on Membrane Computing techniques.
 
 The key notion of this algorithm is the {\it cell complex}, a basic
 concept in Algebraic Topology which can be seen as a mathematical
-abstraction of a space unit. In the original work by Liu (see \cite{liu20093d,DBLP:journals/cgf/LiuCLJ10}) 
-the thinning algorithm is designed for cell complexes of any kind, however we
-restrict to cubical complexes. The main contribution of this paper is
+abstraction of a space unit. In the original work, the thinning algorithm is designed for cell complexes of any kind, however we
+restrict to cubical complexes. 
+
+The main contribution of this paper is
 to bridge an emergent bio-inspired research area as Membrane
 Computing with real-world Image Analysis via well-known concepts of
 Algebraic Topology. This is not the first time in which life-based
-methods are applied to Algebraic Topology. In 1996, J. Chao and J.
+methods are applied to Algebraic Topology. J. Chao and J.
 Nakayama connected Natural Computing and Algebraic Topology using
-Neural Networks \cite{10.1109/ICPR.1996.547259} (extended Kohonen
-mapping). Some years after, K.G. Subramanian {\it et al.} linked in
+Neural Networks \cite{10.1109/ICPR.1996.547259}. Some years after, K.G. Subramanian {\it et al.} linked in
 \cite{DBLP:journals/nc/CeterchiMPS03} Digital Image and Natural
-Computing. In 2009, Christinal {\it et al.} started a new way where
+Computing. Christinal {\it et al.} started a new way where
 algebraic-topological processes have been parallelized via Membrane
 Computing (see
 \cite{DBLP:conf/iwcia/ChristinalDJ09,ChristinalDR10,DiazPernilCGR2012,Diaz-PernilGRS10}).
@@ -154,13 +175,13 @@ As it will be shown below, Membrane Computing\footnote{We refer to
 \cite{paunbook} for basic information in this area, to
 \cite{HandbookMC10} for a comprehensive presentation and the web
 site {\tt http://ppage.psystems.eu} for the up-to-date information.}
-techniques are inspired in the flow of metabolites between cells of
+techniques are inspired in the movement of metabolites between cells of
 a living tissue or between the organelles in an eucaryotic cell.
 This flow of metabolites takes place in parallel in Nature and can
 be interpreted as a flow of information for computational purposes.
 Instead of a set of few instructions with complex data structures,
 the computation steps in a Membrane Computing device are regulated
-by a set of rules with a notation close to biochemical reactions.
+by a set of many rules with a notation close to biochemical reactions.
 From a computational point of view, such reactions can be read as a
 set of {\it if $A$ then $B$} rules where $A$ and $B$ are very simple
 data.
@@ -244,19 +265,17 @@ Membrane Computing model has been widely used to solve computational
 problems in other areas (see e.g.
 \cite{DBLP:conf/iwinac/Diaz-PernilGPR09,Diaz-PernilGPR2010}), but
 recently, they have been also used in the study of digital images
-(e.g.,
+(see, e.g.,
 \cite{Diaz-PernilGRS10,DBLP:conf/caip/Pena-CantillanaDBG11,DBLP:journals/ijncr/Pena-CantillanaDCG11}
 and references therein).
 
 In the tissue P systems used in this paper, the flow of information (the
 application of the rules) are regulated by \emph{promoters} and
-\emph{inhibitors} (see \cite{DBLP:journals/acta/BottoniMPR02}) and we consider a
-(weak) priority relation between rules. Informally, a {\it tissue P system with
-promoters, inhibitors and priorities} of degree $q \geq 1$ can be seen as a set
-of $q$ cells labeled by $1,2,\dots,q$. The cells are the nodes of a virtual
+\emph{inhibitors} (see \cite{DBLP:journals/acta/BottoniMPR02}) and a
+(weak) priority relation between rules is considered. Below, a formal description of the computational model is provided but, roughly speaking, a {\it tissue P system} of the tyoe used in this paper can be seen as a set of enclosed regions of the space, called {\it cells}, where some objects are placed, together with a set of communication rules which settles which objects can be interchanged between cells. The cells are the nodes of a virtual
 graph, where the edges connecting the cells are determined by the communication
 rules of the P system, i.e., as usual in tissue P systems, the edges linking
-cells are not provided explicitly: If a rule $(pro\,\neg inh\,|\,i,u/v,j)$ is
+cells are not provided explicitly. Rules are syntactically expressed as a tuple $(pro\,\neg inh\,|\,i,u/v,j)$. If a rule $(pro\,\neg inh\,|\,i,u/v,j)$ is
 given, then cells $i$ and $j$ are considered linked. The application of a rule
 $(pro\,\neg inh\,|\,i,u/v,j)$ consists of trading the multiset $u$ (initially in
 the cell $i$) against the multiset $v$ (initially in $j$). After the application
@@ -271,6 +290,18 @@ application of the rule. If the promoters and inhibitors are empty, we will
 write $(i,u/v,j)$ instead of $(\emptyset\,\neg\emptyset|\,i,u/v,j)$. Finally, we
 write $(pro\,|i,u/v,j)$ or $(\neg inh\,|i,u/v,j)$ when only promoters or
 inhibitors appear, respectively.
+
+The biological inspirations of this model are intercellular
+communication and cooperation between neurons. A rule $(pro\,\neg
+inh\,|\,i,u/v,j)$ is applied if the reactants $u$ and $v$ are
+present, but it is also necessary the presence of all the promoters
+$pri$ and none of the inhibitors $inh$ in the cell $i$. The
+promoters are not \emph{consumed} nor \emph{produced} by the
+application of the rule, but if they are not in the cell, the rule
+cannot be applied. In one step, each reactant in a membrane can only
+be used for one rule, but if several rules need the presence of the
+same promoter, then the presence of one unique copy of the promoter
+suffices for the application of the rules.
 
 Before giving the formal definition of such P systems, let us recall
 some technical preliminaries. An \emph{alphabet}, $\Sigma$, is a non
@@ -309,14 +340,14 @@ where $q$ is the number of cells (or membranes) of the P system and
     \item $w_1,\dots,w_q$ are strings over $\Gamma$ representing the multisets of
     objects placed inside the cells at the starting of the computation;
     \item $\mathcal{R}$ is a finite set of rules of the following form:
-    $$
+    $
     (pro\,\neg inh\,|\,i,u/v,j)
-    $$
+    $
     for 
-    $$
+    $
     0\leq i\neq j\leq q,\;pro,inh,u,v\in
     \Gamma^*
-    $$
+    $
     \item $Pri$ is a finite set of relations $R_i > R_j$, where $R_i$ and $R_j$
     are rules from $\mathcal{R}$. It means that if $R_i$ and $R_j$ can be applied,
     then the application of $R_i$ has {\it priority} on the application of $R_j$.
@@ -326,17 +357,6 @@ where $q$ is the number of cells (or membranes) of the P system and
     where the {\it output} of the computation will be placed.
 \end{enumerate}
 
-The biological inspirations of this model are intercellular
-communication and cooperation between neurons. A rule $(pro\,\neg
-inh\,|\,i,u/v,j)$ is applied if the reactants $u$ and $v$ are
-present, but it is also necessary the presence of all the promoters
-$pri$ and none of the inhibitors $inh$ in the cell $i$. The
-promoters are not \emph{consumed} nor \emph{produced} by the
-application of the rule, but if they are not in the cell, the rule
-cannot be applied. In one step, each reactant in a membrane can only
-be used for one rule, but if several rules need the presence of the
-same promoter, then the presence of one unique copy of the promoter
-suffices for the application of the rules.
 
 Rules are used as usual in the framework of membrane computing, that is, in a
 maximally parallel way (a universal clock is considered). A \emph{configuration}
@@ -371,32 +391,14 @@ environment.
 Let us consider as input of our computation the multiset $bc$ will
 be placed in the input cell 2. By considering the input, the initial
 configuration has three multisets $C_0=\langle w_1,w_2,w_3\rangle$
-with $w_1=df$, $w_2=a^2bce$ and $w_3=a^2e^2cd$. Let us check which
-rules can be applied from this first configuration. Firstly, the
-rule $R_1$ is considered. Two copies of the object $a$ occur in cell
-2 and one copy of $d$ occur in cell 1, so there are enough copies
-for the trade $a^2/d$. On the other hand, the promoter $b$ occurs in
-cell 2 and the inhibitor $d$ does not occur in this cell, so all the
-conditions for the application of rule 1 are satisfied. Rule 2 can
-also be applied, since $a^2$ and $b$ occur in the cell 2 and $f$
-occurs in the cell 1. Rule 3 can be applied, since $a^2$ and $d$
-occur in the cell 3, $c$ occur in the cell 2 and the inhibitor $b$
-does not occur in cell 2. Rule 4 cannot be applied because the
-inhibitor $c$ occur in the cell 2. Finally, rule $R_5$ can be
-applied {\it twice}, since the promoter $c$ occurs in the cell 3,
-the inhibitor $f$ does not occur in this cell and we have two copies
-of $e$ in the cell 3 ($f$ is available in the environment in an
-arbitrary amount of copies). Hence the {\it applicable} rules from
+with $w_1=df$, $w_2=a^2bce$ and $w_3=a^2e^2cd$. By inspection of the occurrence of the objects in the cells, the {\it applicable} rules from
 this first configuration are $R_1$, $R_2$, $R_3$ and $R_5$, but
 $R_1$ and $R_2$ cannot be applied together, because only two copies
 of $a$ occur in the cell 2. By considering the priority relation,
 $R_1$ has priority on $R_2$ and $R_1$, $R_3$ and $R_4$ are applied.
 After trading the corresponding objects, we get the configuration
 $C_1=\langle w_1',w_2',w_3'\rangle$ with $w_1'=a^2f$, $w_2'=a^2bde$
-and $w_3'=c^2df^4$. From this configuration, we can check that $R_1$
-cannot be applied ($d$ does no occur in cell 1), $R_3$ cannot be
-applied ($a^2$ does not occur in cell 3) and $R_5$ cannot be applied
-(the inhibitor $f$ occurs in the cell 3). On the other hand, $R_2$
+and $w_3'=c^2df^4$. From this configuration, $R_2$
 and $R_4$ satisfy the conditions and both are applied. The new
 configuration is $C_2=\langle w_1'',w_2'',w_3''\rangle$ with
 $w_1''=a^4$, $w_2''=cdf$ and $w_3''=bcdef^4$. No more rules can be
@@ -416,8 +418,7 @@ with six 2D cells (squares), or properties to define \emph{free
 cells} or \emph{isolated cells}.
 
 Before presenting Liu's algorithm, let us recall some basics on the
-combinatorial structure on a topological space\footnote{We follow T.
-Kaczy{\'n}ski, K. Mischaikow and M. Mrozek \cite{kaczynski2004computational}.}.
+combinatorial structure on a topological space (see \cite{kaczynski2004computational}).
 An \emph{elementary closed interval} is a closed interval $\overline{I} \subset
 \mathbb{R}$ of the form $\overline{I} = [l, l+1] \mbox{ or } \overline{I} = [l,
 l]$ for some $l \in \mathbb{Z}$. The former are called \emph{non-degenerated},
@@ -500,27 +501,6 @@ cell such that $\delta \in \partial\, \sigma$. The cell $\sigma$ is called the
 topology of the given cell complex.
 
 \subsection{Example}
-The previous concepts can be illustrated with the following examples:
-$\{(0,0,0)\}$, $\{(x,0,0)\,|\, 0\leq x \leq 1\}$, $\{(x,y,0)\,|\, 0\leq x,y \leq
-1\}$ and $\{(x,y,z)\,|\, 0\leq x,y,z \leq 1\}$ are elementary cubes and for the
-elementary cube $Q\equiv\{(x,y,0)\,|$ $0\leq x,y \leq 1\}$, $\mbox{emb } Q$ is 3
-and $\mbox{dim } Q$ is 2.
-
-Let us consider the elementary cubes $\overline{\sigma}_1 = \{(x,0,0)\,|\, 0\leq
-x \leq 1\}$, $\overline{\sigma}_2 = \{(x,y,0)\,|\, 0\leq x,y \leq 1\}$ and
-$\overline{\sigma}_3 = \{(x,y,z)\,|\, 0\leq x,y,z \leq 1\}$. Notice that
-$\overline{\sigma}_1\subseteq \overline{\sigma}_2 \subseteq \overline{\sigma}_3$
-holds, and hence $\overline{\sigma}_1$, $\overline{\sigma}_2$ and
-$\overline{\sigma}_3$ are faces of $\overline{\sigma}_3$; $\overline{\sigma}_1$
-and $\overline{\sigma}_2$ are proper faces of $\overline{\sigma}_3$;
-$\overline{\sigma}_1$ is a primary face of $\overline{\sigma}_2$ and
-$\overline{\sigma}_2$ is a primary face of $\overline{\sigma}_3$. We also have
-that $\partial\, \overline{\sigma}_2
-=\{\overline{\sigma}_1,\overline{\sigma}_1',\overline{\sigma}_1'',\overline{\sigma}_1'''\}$
-with $\overline{\sigma}_1' = \{(x,1,0)\,|\, 0\leq x \leq 1\}$,
-$\overline{\sigma}_1'' = \{(0,x,0)\,|\, 0\leq x \leq 1\}$,
-$\overline{\sigma}_1''' = \{(1,x,0)\,|\, 0\leq x \leq 1\}$.
-
 \begin{figure}[t]
 \begin{center}
  \subfigure[]{\includegraphics[trim=37mm 130mm 140mm 120mm, clip]{EjemploColapso0.pdf}}
@@ -551,10 +531,12 @@ useful tool in various areas. In this paper we will introduce a bioisnpired
 parallel solution to the problem of finding a skeleton for a given $d$-D image, 
 denoted as $d-\mathbf{ThCub}$.
 
-In Liu's work \cite{liu20093d}, a cell complex is processed in order to obtain
+In \cite{liu20093d}, a cell complex is processed in order to obtain
 another complex with the same topology, and the same geometry. The input cell
 complex is processed by consecutive parallel removal of certain cells. The
-removal process is a simple homotopy equivalence and the set of non-removed cells will make the skeleton. In Algorithm \ref{alg:CellSkel}, we present a sketch of the process of thinning implemented by Liu \emph{et al.} in \cite{liu20093d}. We use $\pi_2$ for the second coordinate projection, defined as $\pi_2(\langle \delta, \sigma \rangle) = \sigma$ for the pair $\langle \delta, \sigma \rangle$.
+removal process is a simple homotopy equivalence and the set of non-removed cells will make the skeleton. 
+
+ We use $\pi_2$ for the second coordinate projection, defined as $\pi_2(\langle \delta, \sigma \rangle) = \sigma$ for the pair $\langle \delta, \sigma \rangle$.
 \begin{algorithm}[t]
  \caption{Cell complex thinning algorithm} \label{alg: Cell thinning}
  \label{alg:CellSkel}
@@ -614,8 +596,7 @@ the other hand, \emph{relative medial persistence} is defined as
 $1-\frac{I(\sigma)}{R(\sigma)}$ and denoted by $\MP_{rel}$. Both of them measure
 the duration in which a cell remains isolated during thinning process.
 
-The cell complex thinning algorithm is shown in Algorithm \ref{alg: Cell
-thinning}. It starts by initializing the isolated cells. Next, the thinning
+In Algorithm \ref{alg:CellSkel}, we present a sketch of the process of thinning implemented by Liu \emph{et al.} in \cite{liu20093d}. It starts by initializing the isolated cells. Next, the thinning
 iterations start. In each iteration, all simple pairs are selected, all the
 pairs where the facet cell has one of the medial persistence measures less than
 given thresholds or are initially isolated are chosen, taking into account that, if 
@@ -630,7 +611,7 @@ iterations continue. When the algorithm halts, a cell complex
 representing the skeleton for the initial one is obtained.
 
 \section{Membrane Computing Algorithm}\label{sec:MCA}
-In previous sections two key concepts have been reviewed. On one side, cell
+In previous sections, two key concepts have been reviewed. On the one hand, cell
 complexes provide an useful link between continuous spaces and discrete
 structures where combinatorial algorithms may be developed using
 well-established properties and results by continuous topology. On the other
@@ -638,7 +619,7 @@ hand, it has been settled a theoretical framework for working with images,
 considering them as a function from a topological discrete space to a set of
 {\it features}.
 
-Our main goal is, starting from a $d$-dimensional binary image, to build other
+The main goal is, starting from a $d$-dimensional binary image, to build other
 image which represents a skeleton for the original one. In this process, a cell
 complex from the original image is obtained, it is skeletonized and a new image
 from the last skeleton is obtained. Of course, no topological or shape
@@ -786,8 +767,8 @@ $$
 
 Recall that, given a finite set $A$, $\#A$ denotes the number of elements in $A$.
 
-In the following paragraphs we will define a family of tissue P systems to solve the 
-$d-\mathbf{ThCub}$ problem. This P systems find an skeleton for a cubical complex $K$
+Next, a family of tissue P systems to solve the 
+$d-\mathbf{ThCub}$ problem is defined. This P systems find an skeleton for a cubical complex $K$
 while the topology (in terms of homotopy equivalence) and shape is kept. The P systems
 are designed to work following the next sequence of steps:
 \begin{list}{Step \arabic{enumi}:}{\usecounter{enumi}}
@@ -835,7 +816,262 @@ them are given as parameters in some set. From this point of view, a
 rule scheme is a function from some set of parameters to the set of
 rules of the system.
 
-$\mathcal{R}$ is the set of rules:
+The set of rules $\mathcal{R}$ is provided in the Appendix.
+
+\begin{itemize}
+    \item $Pri = \{R_6 > R_7, R_{13} > R_{15}, R_{14} > R_{15}, R_{36} > R_{34}\} $
+    \item $i_{in} = 1$ is the input cell.
+    \item $i_{out} = 5$ is the output cell.
+\end{itemize}
+
+\begin{theorem}
+The family of P Systems $\Pi(n, \varepsilon_{abs}, \varepsilon_{rel})$ defined above builds an skeleton for the
+cubical complex built from a $d$-D image, $d=2,3$, in logarithmic time (measured as number of computation steps 
+with respect to the size of the input image $n^d$). 
+\end{theorem}
+\begin{proof} {\it (Sketch).} Let $K \subset T_{2n-1}^k$ be the cubical cell complex encoded as described above for a given $d$-D image.
+
+The evolution of the P systems follows the steps sequenced below.
+\begin{list}{\textbf{Step \arabic{enumi}}}{\usecounter{enumi}}
+%% Paso 1
+\item In this step only rules establishing communication with the first membrane
+can be selected, hence only rules from $R_1$ to $R_5$ can be taken
+up. However, rules $R_4$ and $R_5$ require the presence of isolation
+marks, either positive ($I_\mathbf{i}$) or negative
+($\overline{I}_\mathbf{i}$), and those marks are not present yet
+into the first membrane. Consequently, only rules $R_1$, $R_2$ and
+$R_3$ can be selected. The application of the selected rules in the
+scheme $R_1$, import from the environment an isolation mark
+$I_\mathbf{i}$ for each isolated cell $\mathbf{i}$. Also, the
+application of rules in $R_2$ take one non isolation mark
+$\overline{I}_\mathbf{i}$ for every non isolated cell $\mathbf{i}$.
+The application of the rules in the scheme $R_3$ moves every facet
+counter $F_\mathbf{i}$ to the second membrane.
+%% Paso 2
+\item In this situation, only rules in the five first schemes can be selected.
+However, the presence of isolation marks blocks the selection of
+rules $R_1$ and $R_2$. On the other hand, facet counters have been
+moved to the second membrane in the prior step. Henceforth, only
+rules $R_4$ and $R_5$ can be selected.
+
+After the application of the selected rules, all the available objects are in
+the second membrane.
+%% Paso 3
+\item In this computation stage, with all the objects inside the second
+membrane, only rules in the schemes $R_6$ to $R_{12}$ can be selected. Rules in
+$R_9$ through $R_{12}$ cannot be selected as there is no simple pair marks,
+either positive or negative. Rules $R_6$, $R_7$ and $R_8$ determine a maximal
+set of rules bearing in mind that rules in $R_6$ has greater priority than rules
+in $R_7$ and both of them take all the available cells objects $\mathbf{i}$.
+
+After applying the selected rules, every cell in the second membrane has a
+simple pair mark, either positive or negative. In addition, the application of
+rules in $R_8$ moves the facet counters to the third membrane.
+%% Paso 4
+\item Only rules in the schemes $R_6$ to $R_{12}$ can
+be selected, as any other one has not enough elements in the corresponding
+membrane to be chosen. On the other hand, in the present stage the presence of
+simple pair marks prevent the selection of rules $R_6$ or $R_7$ and the absence
+of facet counters $F_\mathbf{i}$ avoid the selection of rules in $R_8$. Hence,
+only rules from $R_9$ to $R_{12}$ can be selected.
+
+The application of selected rules leads the system to the following computation,
+with all the objects in the third membrane.
+%% Paso 5
+\item In this step, only rules in $R_{13}$ through $R_{15}$ can be selected. All
+of them determine a maximal set of rules that marks every cell $\mathbf{i}$ as
+removable or not removable, bearing in mind the priority relation $R_{13} >
+R_{14} > R_{15}$.
+
+After the application of selected rules, all the cells are marked with remove
+mark, either positive or negative. Although, for each cell marked as removable,
+one object $R$ and one object $H$ have been imported from the environment.
+%% Paso 6
+\item In this computation stage, all the cells have been marked as removable or
+not removable. Here we can find two different possibilities, depending on the
+existence of objects $R_i$, $R$ and $H$, marking the remove of some cells.
+\begin{list}{\arabic{enumii})}{\usecounter{enumii}}
+\item If no cell has been marked as removable, there are no objects
+$R_\mathbf{i}$, $R$ or $H$ in the third membrane. In this situation, rules
+$R_{16}$ through $R_{27}$ cannot be selected as all of them requiere the
+presence either of objects $R_\mathbf{i}$, $R$ or $H$. On the other hand, rules
+in $R_{29}$ and $R_{30}$ cannot be selected as they require the absence of
+objects $\mathbf{i}$. The rules from $R_{31}$ above cannot be neither selected,
+as the take objects from the fourth membrane and, in the present situation,
+there are no objects inside it.
+
+The unique rules that can be selected are those in the scheme $R_{28}$. After its
+application, all the cells are inside the output membrane, the fifth one. This
+situation prevent the selection of any rule, resulting in a halting computation.
+\item Let us suppose now that there are some cells marked to be removed inside the third
+membrane. Henceforth, there are objects $R_\mathbf{i}$, $R$ and $H$ for each
+cell marked as removable. The unique rules that can be selected are those in
+$R_{16}$ through $R_{21}$. The rules in $R_{22}$ up to $R_{30}$ cannot be
+selected in this stage as they require the absence of objects $R$. Rules from
+$R_{31}$ above cannot be selected as they require the presence of objects
+inside the fourth membrane and, in the current stage, this membrane is empty.
+
+The application of the selected rules updates the facet counter
+($R_{16}$), removes cells, simple pair marks and facet counters for
+each removable cell ($R_{17}$ to $R_{21}$).
+\end{list}
+%% Paso 7
+\item To reach this configuration it is essential to have removed some cells in
+prior steps. After removing all the cells marked to be removed, all the objects
+$R$ have been removed too. This allows the rules $R_{22}$ up to $R_{27}$ to be
+selected. The other rules cannot be selected as they require the presence of
+objects that there are not present inside the corresponding membrane.
+
+The application of the selected rules leads the system to the next
+configuration, where all the objects are inside the fourth membrane.
+%% Paso 8
+\item In this computation, only the rules in $R_{29}$ up to $R_{35}$ can be
+selected. Rules $R_{34}$ and $R_{35}$ have been designed to make a maximal set
+of rules, as every object $\mathbf{i}$ can be used by only one of them.
+
+The application of the selected rules erases auxiliary objects ($R_{29}$ to
+$R_{33}$), marks new isolated cells and update counter $I$ ($R_{34}$).
+%% Paso 9
+\item In this stage, the unique rules that can be selected are those in $R_{36}$
+due to priority reasons ($R_{36} > R_{35}$). Rules in $R_{37}$ up to $R_{39}$
+require the presence of objects $U_\mathbf{i}$ and those objects are not
+present yet inside the fourth membrane.
+
+The application of the selected rules updates the counter $R$.
+%% Paso 10
+\item Now, only the rules $R_{37}$ up to $R_{39}$ can be
+selected. After the application of the selected rules, all the available objects
+are inside the second membrane, allowing the system to evolve repeating the
+steps shown below.
+\end{list}
+
+\end{proof}
+Table \ref{table: Complexity Aspects} shows the required computational resources for the family of tissue P systems defined
+in this paper.
+\begin{table}[t!]
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+$d$-D binary image thinning problem ($d-\mathbf{ThCub}$)\\
+\hline
+\end{tabular}\\
+\begin{tabular}{|l|c|}
+	\hline
+	\textbf{Complexity}                     &  \\ 
+	\hline
+	Number of steps of computation          & $\leq 8d(n+1)+6$ \\ 
+	\hline\hline
+	\textbf{Resources needed}               &  \\ 
+	\hline
+	Size of the alphabet                    &   $O(n^{d+1})$   \\
+	Initial number of cells                 &       $5$        \\
+	Initial number of objects               &     $O(|K|)$     \\
+	Number of rules                         &   $O(n^{d+2})$   \\
+	Upper bound for the length of the rules &       $8$        \\ 
+	\hline
+\end{tabular}\caption{Complexity aspects, where the size of the input data is $O(n^d)$,
+$|K|$ is the number of cells in the input cell complex $K$.}\label{table: Complexity Aspects}
+\end{center}
+\end{table}
+
+\subsection{Example}
+In order to proper understanding of the parallel bioinspired algorithm presented in this 
+paper, we will show here a simple example. We will start with a binary 2-D image shown in
+Figure \ref{fig:Example01}(a), where each pixel is represented as a square. In Figure 
+\ref{fig:Example01}(b) the cubical complex associated to the input image is shown over the 
+source image and, finally, the associated cubical complex is presented alone in Figure 
+\ref{fig:Example01}(c). In all of the previous figures a coordinate system is presented. 
+The last one presents the encoding used in this paper to represent a cubic cell by a tuple of 
+integers. For example, the cell $(3,5)$ in Figure \ref{fig:Example01}(c) is the unique square in
+the complex. In the following paragraphs we show the thinning process using thresholds 
+$\varepsilon_{abs}=2$ and $\varepsilon_{rel}=0.5$.
+ 
+Figure \ref{fig:Example01}(d) presents one of the simple pairs that can be selected for removal,
+e.g. $\langle (2,8), (2,7) \rangle$ and $\langle (4,5), (3,5) \rangle$. Recall that, when a cell
+belongs to many simple pairs, one of them is non-deterministically chosen. The counters 
+$I$ and $R$ for the facets of those simple pairs are $I(2,7)=I(3,5)=0$ as both cells are initially
+isolated and $R(2,7)=R(3,5)=1$ as they are selected to be removed in the first iteration. Therefore,
+the medial persistence measures are given by
+\begin{eqnarray*}
+\MP_{abs}(2,7)=1, \MP_{rel}(2,7)=1,\\
+\MP_{abs}(3,5)=1, \MP_{rel}(3,5)=1
+\end{eqnarray*}
+ 
+Hence, both simple pairs can be removed resulting in the complex given in Figure \ref{fig:Example01}(e). 
+
+In the next iteration, the simple pairs are shown (in red) in Figure \ref{fig:Example01}(f). 
+The values for isolation and remove counter for the facet of the unique simple pair are, respectively,
+$I(3,6)=1$ as it became isolated in the first iteration and $R(3,6)=2$ as it was selected for removal in
+the second iteration. Medial persistence values are given by
+$$
+\MP_{abs}(3,6)=1, \MP_{rel}(3,6)=0.5
+$$
+Hence, the unique simple pair can be removed, obtaining the complex in Figure \ref{fig:Example01}(g).
+
+Once again, there is a unique simple pair (shown in Figure \ref{fig:Example01}(h)) where 
+isolation and removal counters values are, respectively, $I(2,5)=1, R(2,5)=3$. Therefore, 
+the medial persistence measures are given by
+$$
+\MP_{abs}(2,5)=2, \MP_{rel}(2,5) \approx 0.67
+$$
+so it cannot be removed, as this simple pair retains shape information.
+
+Finally, the algorithm halts returning the complex in Figure \ref{fig:Example01}(i).
+\begin{figure}
+\label{fig:Example01}
+\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-01.pdf}}
+\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-02.pdf}}
+\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-04.pdf}}\\
+\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-06.pdf}}
+\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-07.pdf}}
+\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-08.pdf}}\\
+\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-09.pdf}}
+\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-10.pdf}}
+\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-09.pdf}}
+\caption{Construction of a cubical complex associated to a binary image (a). In (b) the complex is shown over the image. In (c) the complex is shown alone. From (e) to (i) the thinning process is sketched.}
+\end{figure}
+\section{Conclusions and Future Work}
+In this paper, three different research areas are brought together
+in order to propose a new point of view on a classical problem:
+Algebraic Topology, Membrane Computing and Digital Image Analysis.
+Firstly, Algebraic Topology allows us to split the space in discrete
+units and to define mechanical operators on such space units of
+different dimensions. Secondly, a recent bio-inspired computational
+model, Membrane Computing, is used to handle with such operators and
+provide an alternative point of view for handling with them. Both
+disciplines deal with compartments of the Euclidean space on their
+foundations, but their inspiration and motivation are quite
+different. The former is born as a tool for handle concepts of
+Algebraic Topology and the latter is a computation model inspired in
+the functioning of living cells and tissues.
+
+The case of study for applying the Membrane Computing implementation of the
+Algebraic Topology concepts has been the skeletonization problem, a classical
+case study in Digital Image Analysis. This implementation provides a new proof
+that the Membrane Computing framework is flexible enough to adapt to unexpected
+situations. This paper follows the research line open with
+\cite{ChristinalDR10}, but, to the best of our knowledge, this is the first work
+which put together Membrane Computing, cells complexes and thinning processes.
+In this way, this is a pioneer work that open a new research line that can be
+followed at different levels.
+
+Further research can be made by exploring other P system models with new
+computational features, the application of Membrane Computing techniques to
+further Digital Image Analysis or a deeper theoretical study of the
+compartmental view of the Euclidean space by Membrane Computing and Algebraic
+Topology as the starting point for a deeper study of their common properties.
+
+\section*{Acknowledgements}
+MAGN acknowledges the
+support of the project TIN2012-37434 of the Ministerio de
+Econom\'{\i}a y Competitividad of Spain.
+
+\bibliographystyle{IEEEtran}
+\bibliography{Thinning_seville}
+
+\appendix
+
+Next, the set of rules $\mathcal{R}$ is provided:
 \begin{itemize}
 %% R1
     \item
@@ -910,7 +1146,7 @@ $\mathcal{R}$ is the set of rules:
 	removable where the facet cell $\mathbf{i}$ is initially isolated.
 %% R14
     \item $\Rule{}{S_\mathbf{i},S_\mathbf{j},(R,\mathbf{i},z),
-    (I,\mathbf{i},Z)}{R_\mathbf{i},
+    (I,\mathbf{i},Z)} {R_\mathbf{i},
     R_\mathbf{j}}{3}{\mathbf{i}\,\mathbf{j}}{\mathbf{i}\,\mathbf{j}\,R_\mathbf{i}\,R_\mathbf{j}\,R\,H}{0}{\mathbf{i}\in
     T_{2n-1}^d, \mathbf{j} \in \partial\, \mathbf{i}, \MP_{abs} <
     \varepsilon_{abs} \mbox{or }\MP_{rel} < \varepsilon_{rel} \mbox{ and } 0 \leq
@@ -1001,262 +1237,6 @@ $\mathcal{R}$ is the set of rules:
 
     These rules move objects to the second membrane.
 \end{itemize}
-Finally, we complete the description of the tissue P systems with $Pri$, $i_{in}$ and $i_{out}$.
 
-\begin{itemize}
-    \item $Pri = \{R_6 > R_7, R_{13} > R_{15}, R_{14} > R_{15}, R_{36} > R_{34}\} $
-    \item $i_{in} = 1$ is the input cell.
-    \item $i_{out} = 5$ is the output cell.
-\end{itemize}
 
-\begin{theorem}
-The family of P Systems $\Pi(n, \varepsilon_{abs}, \varepsilon_{rel})$ defined above builds an skeleton for the
-cubical complex built from a $d$-D image, $d=2,3$, in logarithmic time (measured as number of computation steps 
-with respect to the size of the input image $n^d$). 
-\end{theorem}
-\begin{proof}
-
-Let $K \subset T_{2n-1}^k$ be the cubical cell complex encoded as described above for a given $d$-D image.
-
-The evolution of the P systems follows the steps sequenced below.
-\begin{list}{\textbf{Step \arabic{enumi}}}{\usecounter{enumi}}
-%% Paso 1
-\item In this step only rules establishing communication with the first membrane
-can be selected, hence only rules from $R_1$ to $R_5$ can be taken
-up. However, rules $R_4$ and $R_5$ require the presence of isolation
-marks, either positive ($I_\mathbf{i}$) or negative
-($\overline{I}_\mathbf{i}$), and those marks are not present yet
-into the first membrane. Consequently, only rules $R_1$, $R_2$ and
-$R_3$ can be selected. The application of the selected rules in the
-scheme $R_1$, import from the environment an isolation mark
-$I_\mathbf{i}$ for each isolated cell $\mathbf{i}$. Also, the
-application of rules in $R_2$ take one non isolation mark
-$\overline{I}_\mathbf{i}$ for every non isolated cell $\mathbf{i}$.
-The application of the rules in the scheme $R_3$ moves every facet
-counter $F_\mathbf{i}$ to the second membrane.
-%% Paso 2
-\item In this situation, only rules in the five first schemes can be selected.
-However, the presence of isolation marks blocks the selection of
-rules $R_1$ and $R_2$. On the other hand, facet counters have been
-moved to the second membrane in the prior step. Henceforth, only
-rules $R_4$ and $R_5$ can be selected.
-
-After the application of the selected rules, all the available objects are in
-the second membrane.
-%% Paso 3
-\item In this computation stage, with all the objects inside the second
-membrane, only rules in the schemes $R_6$ to $R_{12}$ can be selected. Rules in
-$R_9$ through $R_{12}$ cannot be selected as there is no simple pair marks,
-either positive or negative. Rules $R_6$, $R_7$ and $R_8$ determine a maximal
-set of rules bearing in mind that rules in $R_6$ has greater priority than rules
-in $R_7$ and both of them take all the available cells objects $\mathbf{i}$.
-
-After applying the selected rules, every cell in the second membrane has a
-simple pair mark, either positive or negative. In addition, the application of
-rules in $R_8$ moves the facet counters to the third membrane.
-%% Paso 4
-\item Only rules in the schemes $R_6$ to $R_{12}$ can
-be selected, as any other one has not enough elements in the corresponding
-membrane to be chosen. On the other hand, in the present stage the presence of
-simple pair marks prevent the selection of rules $R_6$ or $R_7$ and the absence
-of facet counters $F_\mathbf{i}$ avoid the selection of rules in $R_8$. Hence,
-only rules from $R_9$ to $R_{12}$ can be selected.
-
-The application of selected rules leads the system to the following computation,
-with all the objects in the third membrane.
-%% Paso 5
-\item In this step, only rules in $R_{13}$ through $R_{15}$ can be selected. All
-of them determine a maximal set of rules that marks every cell $\mathbf{i}$ as
-removable or not removable, bearing in mind the priority relation $R_{13} >
-R_{14} > R_{15}$.
-
-After the application of selected rules, all the cells are marked with remove
-mark, either positive or negative. Although, for each cell marked as removable,
-one object $R$ and one object $H$ have been imported from the environment.
-%% Paso 6
-\item In this computation stage, all the cells have been marked as removable or
-not removable. Here we can find two different possibilities, depending on the
-existence of objects $R_i$, $R$ and $H$, marking the remove of some cells.
-\begin{list}{\arabic{enumii})}{\usecounter{enumii}}
-\item If no cell has been marked as removable, there are no objects
-$R_\mathbf{i}$, $R$ or $H$ in the third membrane. In this situation, rules
-$R_{16}$ through $R_{27}$ cannot be selected as all of them requiere the
-presence either of objects $R_\mathbf{i}$, $R$ or $H$. On the other hand, rules
-in $R_{29}$ and $R_{30}$ cannot be selected as they require the absence of
-objects $\mathbf{i}$. The rules from $R_{31}$ above cannot be neither selected,
-as the take objects from the fourth membrane and, in the present situation,
-there are no objects inside it.
-
-The only rules that can be selected are those in the scheme $R_{28}$. After its
-application, all the cells are inside the output membrane, the fifth one. This
-situation prevent the selection of any rule, resulting in a halting computation.
-\item Let us suppose now that there are some cells marked to be removed inside the third
-membrane. Henceforth, there are objects $R_\mathbf{i}$, $R$ and $H$ for each
-cell marked as removable. The only rules that can be selected are those in
-$R_{16}$ through $R_{21}$. The rules in $R_{22}$ up to $R_{30}$ cannot be
-selected in this stage as they require the absence of objects $R$. Rules from
-$R_{31}$ above cannot be selected as they require the presence of objects
-inside the fourth membrane and, in the current stage, this membrane is empty.
-
-The application of the selected rules updates the facet counter
-($R_{16}$), removes cells, simple pair marks and facet counters for
-each removable cell ($R_{17}$ to $R_{21}$).
-\end{list}
-%% Paso 7
-\item To reach this configuration it is essential to have removed some cells in
-prior steps. After removing all the cells marked to be removed, all the objects
-$R$ have been removed too. This allows the rules $R_{22}$ up to $R_{27}$ to be
-selected. The other rules cannot be selected as they require the presence of
-objects that there are not present inside the corresponding membrane.
-
-The application of the selected rules leads the system to the next
-configuration, where all the objects are inside the fourth membrane.
-%% Paso 8
-\item In this computation, only the rules in $R_{29}$ up to $R_{35}$ can be
-selected. Rules $R_{34}$ and $R_{35}$ have been designed to make a maximal set
-of rules, as every object $\mathbf{i}$ can be used by only one of them.
-
-The application of the selected rules erases auxiliary objects ($R_{29}$ to
-$R_{33}$), marks new isolated cells and update counter $I$ ($R_{34}$).
-%% Paso 9
-\item In this stage, the only rules that can be selected are those in $R_{36}$
-due to priority reasons ($R_{36} > R_{35}$). Rules in $R_{37}$ up to $R_{39}$
-require the presence of objects $U_\mathbf{i}$ and those objects are not
-present yet inside the fourth membrane.
-
-The application of the selected rules updates the counter $R$.
-%% Paso 10
-\item Now, only the rules $R_{37}$ up to $R_{39}$ can be
-selected. After the application of the selected rules, all the available objects
-are inside the second membrane, allowing the system to evolve repeating the
-steps shown below.
-\end{list}
-
-\end{proof}
-
-The required computational resources for the family of tissue P systems defined
-in this paper is given in the table \ref{table: Complexity Aspects}.
-\begin{table}[t!]
-\begin{center}
-\begin{tabular}{|c|}
-\hline
-$d$-D binary image thinning problem ($d-\mathbf{ThCub}$)\\
-\hline
-\end{tabular}\\
-\begin{tabular}{|l|c|}
-	\hline
-	\textbf{Complexity}                     &  \\ 
-	\hline
-	Number of steps of computation          & $\leq 8d(n+1)+6$ \\ 
-	\hline\hline
-	\textbf{Resources needed}               &  \\ 
-	\hline
-	Size of the alphabet                    &   $O(n^{d+1})$   \\
-	Initial number of cells                 &       $5$        \\
-	Initial number of objects               &     $O(|K|)$     \\
-	Number of rules                         &   $O(n^{d+2})$   \\
-	Upper bound for the length of the rules &       $8$        \\ 
-	\hline
-\end{tabular}\caption{Complexity aspects, where the size of the input data is $O(n^d)$,
-$|K|$ is the number of cells in the input cell complex $K$.}\label{table: Complexity Aspects}
-\end{center}
-\end{table}
-
-\subsection{Example}
-In order to proper understanding of the parallel bioinspired algorithm presented in this 
-paper, we will show here a simple example. We will start with a binary 2-D image shown in
-Figure \ref{fig:Example01}(a), where each pixel is represented as a square. In Figure 
-\ref{fig:Example01}(b) the cubical complex associated to the input image is shown over the 
-source image and, finally, the associated cubical complex is presented alone in Figure 
-\ref{fig:Example01}(c). In all of the previous figures a coordinate system is presented. 
-The last one presents the encoding used in this paper to represent a cubic cell by a tuple of 
-integers. For example, the cell $(3,5)$ in Figure \ref{fig:Example01}(c) is the only square in
-the complex. In the following paragraphs we show the thinning process using thresholds 
-$\varepsilon_{abs}=2$ and $\varepsilon_{rel}=0.5$.
- 
-Figure \ref{fig:Example01}(d) presents one of the simple pairs that can be selected for removal,
-e.g. $\langle (2,8), (2,7) \rangle$ and $\langle (4,5), (3,5) \rangle$. Recall that, when a cell
-belongs to many simple pairs, one of them is non-deterministically chosen. The counters 
-$I$ and $R$ for the facets of those simple pairs are $I(2,7)=I(3,5)=0$ as both cells are initially
-isolated and $R(2,7)=R(3,5)=1$ as they are selected to be removed in the first iteration. Therefore,
-the medial persistence measures are given by
-\begin{eqnarray*}
-\MP_{abs}(2,7)=1, \MP_{rel}(2,7)=1,\\
-\MP_{abs}(3,5)=1, \MP_{rel}(3,5)=1
-\end{eqnarray*}
- 
-Hence, both simple pairs can be removed resulting in the complex given in Figure \ref{fig:Example01}(e). 
-
-In the next iteration, the simple pairs are shown (in red) in Figure \ref{fig:Example01}(f). 
-The values for isolation and remove counter for the facet of the only one simple pair are, respectively,
-$I(3,6)=1$ as it became isolated in the first iteration and $R(3,6)=2$ as it was selected for removal in
-the second iteration. Medial persistence values are given by
-$$
-\MP_{abs}(3,6)=1, \MP_{rel}(3,6)=0.5
-$$
-Hence, the only simple pair can be removed, obtaining the complex in Figure \ref{fig:Example01}(g).
-
-Once again, there is only one simple pair (shown in Figure \ref{fig:Example01}(h)) where 
-isolation and removal counters values are, respectively, $I(2,5)=1, R(2,5)=3$. Therefore, 
-the medial persistence measures are given by
-$$
-\MP_{abs}(2,5)=2, \MP_{rel}(2,5) \approx 0.67
-$$
-so it cannot be removed, as this simple pair retains shape information.
-
-Finally, the algorithm halts returning the complex in Figure \ref{fig:Example01}(i).
-\begin{figure}
-\label{fig:Example01}
-\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-01.pdf}}
-\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-02.pdf}}
-\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-04.pdf}}\\
-\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-06.pdf}}
-\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-07.pdf}}
-\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-08.pdf}}\\
-\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-09.pdf}}
-\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-10.pdf}}
-\subfigure[]{\includegraphics[trim=35mm 135mm 135mm 115mm, clip]{Example-09.pdf}}
-\caption{Construction of a cubical complex associated to a binary image (a). In (b) the complex is shown over the image. In (c) the complex is shown alone. From (e) to (i) the thinning process is sketched.}
-\end{figure}
-\section{Conclusions and Future Work}
-In this paper, three different research areas are brought together
-in order to propose a new point of view on a classical problem:
-Algebraic Topology, Membrane Computing and Digital Image Analysis.
-Firstly, Algebraic Topology allows us to split the space in discrete
-units and to define mechanical operators on such space units of
-different dimensions. Secondly, a recent bio-inspired computational
-model, Membrane Computing, is used to handle with such operators and
-provide an alternative point of view for handling with them. Both
-disciplines deal with compartments of the Euclidean space on their
-foundations, but their inspiration and motivation are quite
-different. The former is born as a tool for handle concepts of
-Algebraic Topology and the latter is a computation model inspired in
-the functioning of living cells and tissues.
-
-The case of study for applying the Membrane Computing implementation of the
-Algebraic Topology concepts has been the skeletonization problem, a classical
-case study in Digital Image Analysis. This implementation provides a new proof
-that the Membrane Computing framework is flexible enough to adapt to unexpected
-situations. This paper follows the research line open with
-\cite{ChristinalDR10}, but, to the best of our knowledge, this is the first work
-which put together Membrane Computing, cells complexes and thinning processes.
-In this way, this is a pioneer work that open a new research line that can be
-followed at different levels.
-
-Further research can be made by exploring other P system models with new
-computational features, the application of Membrane Computing techniques to
-further Digital Image Analysis or a deeper theoretical study of the
-compartmental view of the Euclidean space by Membrane Computing and Algebraic
-Topology as the starting point for a deeper study of their common properties.
-
-\section*{Acknowledgements}
-DDP and MAGN acknowledge the support of the Project of Excellence with
-{\it Investigador de Reconocida Val\'{\i}a} of the Junta de
-Andaluc\'{\i}a, grant P08-TIC-04200. MAGN also acknowledges the
-support of the project TIN2012-37434 of the Ministerio de
-Econom\'{\i}a y Competitividad of Spain. Both projects are cofinanced
-by FEDER funds.
-
-\bibliographystyle{IEEEtran}
-\bibliography{Thinning_seville}
 \end{document}
