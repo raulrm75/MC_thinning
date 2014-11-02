@@ -1,0 +1,150 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'MainWindow.ui'
+#
+# Created: Fri Nov 29 18:08:57 2013
+#      by: PyQt4 UI code generator 4.10.3
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName(_fromUtf8("MainWindow"))
+        MainWindow.resize(691, 579)
+        MainWindow.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.centralwidget = QtGui.QWidget(MainWindow)
+        self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
+        self.gridLayout_2 = QtGui.QGridLayout(self.centralwidget)
+        self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
+        self.groupBox = QtGui.QGroupBox(self.centralwidget)
+        self.groupBox.setObjectName(_fromUtf8("groupBox"))
+        self.gridLayout = QtGui.QGridLayout(self.groupBox)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.horizontalLayout = QtGui.QHBoxLayout()
+        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
+        self.verticalLayout = QtGui.QVBoxLayout()
+        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
+        self.horizontalLayout_2 = QtGui.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
+        self.label = QtGui.QLabel(self.groupBox)
+        self.label.setObjectName(_fromUtf8("label"))
+        self.horizontalLayout_2.addWidget(self.label)
+        self.sldrThresholdAbs = QtGui.QSlider(self.groupBox)
+        self.sldrThresholdAbs.setProperty("value", 2)
+        self.sldrThresholdAbs.setOrientation(QtCore.Qt.Horizontal)
+        self.sldrThresholdAbs.setObjectName(_fromUtf8("sldrThresholdAbs"))
+        self.horizontalLayout_2.addWidget(self.sldrThresholdAbs)
+        self.lblThresholdAbs = QtGui.QLabel(self.groupBox)
+        self.lblThresholdAbs.setObjectName(_fromUtf8("lblThresholdAbs"))
+        self.horizontalLayout_2.addWidget(self.lblThresholdAbs)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.horizontalLayout_3 = QtGui.QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(_fromUtf8("horizontalLayout_3"))
+        self.label_2 = QtGui.QLabel(self.groupBox)
+        self.label_2.setObjectName(_fromUtf8("label_2"))
+        self.horizontalLayout_3.addWidget(self.label_2)
+        self.sldrThresholdRel = QtGui.QSlider(self.groupBox)
+        self.sldrThresholdRel.setMaximum(100)
+        self.sldrThresholdRel.setProperty("value", 50)
+        self.sldrThresholdRel.setOrientation(QtCore.Qt.Horizontal)
+        self.sldrThresholdRel.setObjectName(_fromUtf8("sldrThresholdRel"))
+        self.horizontalLayout_3.addWidget(self.sldrThresholdRel)
+        self.lblThresholdRel = QtGui.QLabel(self.groupBox)
+        self.lblThresholdRel.setObjectName(_fromUtf8("lblThresholdRel"))
+        self.horizontalLayout_3.addWidget(self.lblThresholdRel)
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+        self.horizontalLayout.addLayout(self.verticalLayout)
+        self.btnSetDefaultThreshold = QtGui.QPushButton(self.groupBox)
+        self.btnSetDefaultThreshold.setObjectName(_fromUtf8("btnSetDefaultThreshold"))
+        self.horizontalLayout.addWidget(self.btnSetDefaultThreshold)
+        self.gridLayout.addLayout(self.horizontalLayout, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.groupBox, 0, 0, 1, 1)
+        self.tabDimension = QtGui.QTabWidget(self.centralwidget)
+        self.tabDimension.setObjectName(_fromUtf8("tabDimension"))
+        self.tab2D = QtGui.QWidget()
+        self.tab2D.setObjectName(_fromUtf8("tab2D"))
+        self.gridLayout_3 = QtGui.QGridLayout(self.tab2D)
+        self.gridLayout_3.setObjectName(_fromUtf8("gridLayout_3"))
+        self.horizontalLayout_4 = QtGui.QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(_fromUtf8("horizontalLayout_4"))
+        self.label_3 = QtGui.QLabel(self.tab2D)
+        self.label_3.setObjectName(_fromUtf8("label_3"))
+        self.horizontalLayout_4.addWidget(self.label_3)
+        self.ed2DInputFile = QtGui.QLineEdit(self.tab2D)
+        self.ed2DInputFile.setObjectName(_fromUtf8("ed2DInputFile"))
+        self.horizontalLayout_4.addWidget(self.ed2DInputFile)
+        self.tbtn2DFileOpen = QtGui.QToolButton(self.tab2D)
+        self.tbtn2DFileOpen.setObjectName(_fromUtf8("tbtn2DFileOpen"))
+        self.horizontalLayout_4.addWidget(self.tbtn2DFileOpen)
+        self.pushButton = QtGui.QPushButton(self.tab2D)
+        self.pushButton.setObjectName(_fromUtf8("pushButton"))
+        self.horizontalLayout_4.addWidget(self.pushButton)
+        self.gridLayout_3.addLayout(self.horizontalLayout_4, 0, 0, 1, 1)
+        self.horizontalLayout_5 = QtGui.QHBoxLayout()
+        self.horizontalLayout_5.setObjectName(_fromUtf8("horizontalLayout_5"))
+        self.gbox2DInput = QtGui.QGroupBox(self.tab2D)
+        self.gbox2DInput.setObjectName(_fromUtf8("gbox2DInput"))
+        self.horizontalLayout_5.addWidget(self.gbox2DInput)
+        self.gbox2DOutput = QtGui.QGroupBox(self.tab2D)
+        self.gbox2DOutput.setObjectName(_fromUtf8("gbox2DOutput"))
+        self.horizontalLayout_5.addWidget(self.gbox2DOutput)
+        self.groupBox_4 = QtGui.QGroupBox(self.tab2D)
+        self.groupBox_4.setObjectName(_fromUtf8("groupBox_4"))
+        self.txtThinningInfo = QtGui.QTextBrowser(self.groupBox_4)
+        self.txtThinningInfo.setGeometry(QtCore.QRect(0, 20, 256, 192))
+        self.txtThinningInfo.setObjectName(_fromUtf8("txtThinningInfo"))
+        self.horizontalLayout_5.addWidget(self.groupBox_4)
+        self.gridLayout_3.addLayout(self.horizontalLayout_5, 1, 0, 1, 1)
+        self.tabDimension.addTab(self.tab2D, _fromUtf8(""))
+        self.tab3D = QtGui.QWidget()
+        self.tab3D.setObjectName(_fromUtf8("tab3D"))
+        self.tabDimension.addTab(self.tab3D, _fromUtf8(""))
+        self.gridLayout_2.addWidget(self.tabDimension, 1, 0, 1, 1)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtGui.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 691, 25))
+        self.menubar.setObjectName(_fromUtf8("menubar"))
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtGui.QStatusBar(MainWindow)
+        self.statusbar.setObjectName(_fromUtf8("statusbar"))
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        self.tabDimension.setCurrentIndex(0)
+        QtCore.QObject.connect(self.sldrThresholdAbs, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), self.lblThresholdAbs.setNum)
+        QtCore.QObject.connect(self.sldrThresholdRel, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), self.lblThresholdRel.setNum)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(_translate("MainWindow", "MC Thinning", None))
+        self.groupBox.setTitle(_translate("MainWindow", "Thinning thresholds", None))
+        self.label.setText(_translate("MainWindow", "Absolute", None))
+        self.lblThresholdAbs.setText(_translate("MainWindow", "2", None))
+        self.label_2.setText(_translate("MainWindow", "Relative", None))
+        self.lblThresholdRel.setText(_translate("MainWindow", "50", None))
+        self.btnSetDefaultThreshold.setText(_translate("MainWindow", "Set defaults", None))
+        self.label_3.setText(_translate("MainWindow", "Input file", None))
+        self.tbtn2DFileOpen.setText(_translate("MainWindow", "...", None))
+        self.pushButton.setText(_translate("MainWindow", "Start thinning", None))
+        self.gbox2DInput.setTitle(_translate("MainWindow", "Input image", None))
+        self.gbox2DOutput.setTitle(_translate("MainWindow", "Thinned image", None))
+        self.groupBox_4.setTitle(_translate("MainWindow", "Thinning info", None))
+        self.tabDimension.setTabText(self.tabDimension.indexOf(self.tab2D), _translate("MainWindow", "2D", None))
+        self.tabDimension.setTabText(self.tabDimension.indexOf(self.tab3D), _translate("MainWindow", "3D", None))
+
